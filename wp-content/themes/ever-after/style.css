@@ -5,8 +5,8 @@ Description: A wedding blog-centric theme decorated with subtle but gorgeous tex
 Author: Automattic
 Author URI: http://automattic.com/
 Template: forever
-Version: 1.0.1
-License: GNU General Public License v2.0
+Version: 1.1
+License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blue, pink, white, light, one-column, fixed-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, post-formats, rtl-language-support, sticky-post, translation-ready
 */
@@ -630,6 +630,14 @@ a:hover {
 		top: -.175em;
 		right: 0;
 }
+.post-password-required .comments-link {
+	background: none;
+	margin-top: .75em;
+	position: relative;
+		top: auto;
+		right: auto;
+	text-align: center;
+}
 .comments-link a {
 	background: none;
 	border-radius: 0;
@@ -867,6 +875,9 @@ object {
 }
 .entry-content .video-player {
 	margin-bottom: 1.5em;
+}
+.mejs-container {
+	margin-bottom: 1em;
 }
 
 

@@ -2,7 +2,7 @@
 /**
  * Ever After functions and definitions.
  *
- * @package Ever_after
+ * @package Ever_After
  * @since Ever After 1.0
  */
 
@@ -11,6 +11,19 @@
  */
 if ( ! isset( $content_width ) )
 	$content_width = 870; /* pixels */
+
+/**
+ * Define theme colors
+ */
+if ( ! isset( $themecolors ) ) {
+	$themecolors = array(
+		'bg'     => 'ffffff',
+		'text'   => '4a4a4a',
+		'link'   => 'e693a2',
+		'border' => 'e6e6e6',
+		'url'    => 'e693a2',
+	);
+}
 
 /**
  * Disable Forever's theme options.
@@ -132,7 +145,7 @@ function everafter_custom_header_args( $args ) {
 }
 add_filter( 'forever_custom_header_args', 'everafter_custom_header_args', 999 );
 
-if ( ! function_exists( 'forever_header_style' ) ) :
+if ( ! function_exists( 'everafter_header_style' ) ) :
 /**
  * Custom styles for our blog header
  */

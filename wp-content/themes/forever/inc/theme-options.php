@@ -112,7 +112,7 @@ function forever_settings_field_posts_in_columns() {
 	?>
 	<label for"posts-in-columns">
 		<input type="checkbox" name="forever_theme_options[posts_in_columns]" id="posts-in-columns" <?php checked( 'on', $options['posts_in_columns'] ); ?> />
-		<?php _e( 'Show four of your latest posts in columns on your home page.', 'forever' );  ?>
+		<?php _e( 'Show four of your latest posts in columns on your blog page.', 'forever' );  ?>
 	</label>
 	<?php
 }
@@ -124,7 +124,7 @@ function forever_theme_options_render_page() {
 	?>
 	<div class="wrap">
 		<?php screen_icon(); ?>
-		<h2><?php printf( __( '%s Theme Options', 'forever' ), get_current_theme() ); ?></h2>
+		<h2><?php printf( __( '%s Theme Options', 'forever' ), wp_get_theme() ); ?></h2>
 		<?php settings_errors(); ?>
 
 		<form method="post" action="options.php">

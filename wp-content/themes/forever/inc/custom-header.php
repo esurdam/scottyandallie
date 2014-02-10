@@ -10,11 +10,6 @@
 /**
  * Setup the WordPress core custom header feature.
  *
- * Use add_theme_support to register support for WordPress 3.4+
- * as well as provide backward compatibility for previous versions.
- * Use feature detection of wp_get_theme() which was introduced
- * in WordPress 3.4.
- *
  * @uses forever_header_style()
  * @uses forever_admin_header_style()
  * @uses forever_admin_header_image()
@@ -24,7 +19,7 @@
  */
 function forever_custom_header_setup() {
 
-	$args = array(
+	add_theme_support( 'custom-header', apply_filters( 'forever_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '1982d1',
 		'width'                  => 885,
@@ -34,48 +29,11 @@ function forever_custom_header_setup() {
 		'wp-head-callback'       => 'forever_header_style',
 		'admin-head-callback'    => 'forever_admin_header_style',
 		'admin-preview-callback' => 'forever_admin_header_image',
-	);
-
-	$args = apply_filters( 'forever_custom_header_args', $args );
-
-	if ( function_exists( 'wp_get_theme' ) ) {
-		add_theme_support( 'custom-header', $args );
-	} else {
-		// Compat: Versions of WordPress prior to 3.4.
-		define( 'HEADER_TEXTCOLOR',    $args['default-text-color'] );
-		define( 'HEADER_IMAGE',        $args['default-image'] );
-		define( 'HEADER_IMAGE_WIDTH',  $args['width'] );
-		define( 'HEADER_IMAGE_HEIGHT', $args['height'] );
-		add_custom_image_header( $args['wp-head-callback'], $args['admin-head-callback'], $args['admin-preview-callback'] );
-	}
+	) ) );
 
 	add_action( 'admin_print_styles-appearance_page_custom-header', 'forever_fonts' );
 }
 add_action( 'after_setup_theme', 'forever_custom_header_setup' );
-
-/**
- * Shiv for get_custom_header().
- *
- * get_custom_header() was introduced to WordPress
- * in version 3.4. To provide backward compatibility
- * with previous versions, we will define our own version
- * of this function.
- *
- * @return stdClass All properties represent attributes of the curent header image.
- *
- * @since Forever 1.1
- */
-
-if ( ! function_exists( 'get_custom_header' ) ) {
-	function get_custom_header() {
-		return (object) array(
-			'url'           => get_header_image(),
-			'thumbnail_url' => get_header_image(),
-			'width'         => HEADER_IMAGE_WIDTH,
-			'height'        => HEADER_IMAGE_HEIGHT,
-		);
-	}
-}
 
 if ( ! function_exists( 'forever_header_style' ) ) :
 /**

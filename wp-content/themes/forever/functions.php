@@ -95,7 +95,6 @@ function forever_setup() {
 	 */
 	forever_add_image_sizes();
 
-	add_theme_support( 'print-style' );
 }
 endif; // forever_setup
 
@@ -164,28 +163,13 @@ function forever_get_post_thumbnail_size() {
 /**
  * Setup the WordPress core custom background feature.
  *
- * Use add_theme_support to register support for WordPress 3.4+
- * as well as provide backward compatibility for previous versions.
- * Use feature detection of wp_get_theme() which was introduced
- * in WordPress 3.4.
- *
  * Hooks into the after_setup_theme action.
  */
 function forever_register_custom_background() {
-	$args = array(
+	add_theme_support( 'custom-background', apply_filters( 'forever_custom_background_args', array(
 		'default-color' => 'fff',
 		'default-image' => get_template_directory_uri() . '/images/body-bg.png',
-	);
-
-	$args = apply_filters( 'forever_custom_background_args', $args );
-
-	if ( function_exists( 'wp_get_theme' ) ) {
-		add_theme_support( 'custom-background', $args );
-	} else {
-		define( 'BACKGROUND_COLOR', $args['default-color'] );
-		define( 'BACKGROUND_IMAGE', $args['default-image'] );
-		add_custom_background();
-	}
+	) ) );
 }
 add_action( 'after_setup_theme', 'forever_register_custom_background' );
 
@@ -521,16 +505,7 @@ function forever_enhanced_image_navigation( $url ) {
 add_filter( 'attachment_link', 'forever_enhanced_image_navigation' );
 
 /**
- * WP.com: Set a default theme color array.
- */
-$themecolors = array(
-	'bg' => 'ffffff',
-	'border' => 'eeeeee',
-	'text' => '444444',
-);
-
-/**
- * Filter the home page posts, and remove any featured post ID's from it. Hooked
+ * Filter the home page posts, and remove any featured post IDs from it. Hooked
  * onto the 'pre_get_posts' action, this changes the parameters of the query
  * before it gets any posts.
  *
@@ -539,7 +514,6 @@ $themecolors = array(
  * @return WP_Query Possibly modified WP_query
  */
 function forever_home_posts( $query = false ) {
-
 	// Bail if not home, not a query, not main query.
 	if ( ! is_home() || ! is_a( $query, 'WP_Query' ) || ! $query->is_main_query() )
 		return $query;
@@ -564,27 +538,28 @@ add_action( 'pre_get_posts', 'forever_home_posts' );
  * @return mixed Array of featured post ids on success, false on failure.
  */
 function forever_featured_posts() {
-
 	$featured_post_ids = get_transient( 'featured_post_ids' );
 
 	// Return cached results.
 	if ( ! empty( $featured_post_ids ) )
 		return $featured_post_ids;
 
+	$sticky_posts = get_option( 'sticky_posts' );
+
 	// Proceed only if sticky posts exist.
-	if ( ! get_option( 'sticky_posts' ) )
+	if ( empty( $sticky_posts ) || ! is_array( $sticky_posts ) )
 		return false;
 
 	// The Featured Posts query.
 	$featured = new WP_Query( array(
-		'post__in'            => get_option( 'sticky_posts' ),
+		'post__in'            => $sticky_posts,
 		'post_status'         => 'publish',
 		'no_found_rows'       => true,
 		'ignore_sticky_posts' => 1,
 		'posts_per_page'      => 50,
 	) );
 
-	// Proceed only if published posts with thumbnails exist.
+	// Proceed only if published posts exist.
 	if ( ! $featured->have_posts() )
 		return false;
 
@@ -613,7 +588,7 @@ function forever_featured_posts() {
 /**
  * Flush out the transients used in forever_featured_posts()
  *
- * Hooks into the "save_post" action.
+ * Hooks into the "save_post" and "update_option_sticky_posts" actions.
  *
  * Vvwooshh!
  */

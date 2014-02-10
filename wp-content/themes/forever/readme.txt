@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.2.1 June 25, 2013 =
+* Removed deprecated functions and backward compatibility for versions prior to 3.4.
+
 = 1.2 May 3 2013 =
 * Added forward compatibility with 3.6.
 * Removed calender widget title fix, after core bug was fixed in 3.5.

@@ -1,27 +1,13 @@
 /*
 Theme Name: Forever
 Theme URI: http://theme.wordpress.com/themes/forever/
-Author: Automattic
-Author URI: http://automattic.com/
 Description: The Forever theme makes it easy to wrap your wedding up in a neat little package with WordPress. You can show off every one of your best photos and highlight each important detail leading up to the big day and beyond.
-Version: 1.2
-License: GNU General Public License
-License URI: license.txt
-Tags: white, silver, blue, two-columns, one-column, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, full-width-template
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-Resetting and rebuilding styles have been helped along thanks to the fine work of
-Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
-along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
-and Blueprint http://www.blueprintcss.org/
-
-Throughout this document we'll be using percentages to define a fluid width wherever possible
-along with em and rem units for typography and vertical measurements
-(falling back to pixel measurements for browsers that don't support rem http://snook.ca/archives/html_and_css/font-size-with-rem)
-
-Visual elements, design, and inspiration for this theme have been taken from the Colorway theme http://wordpress.org/extend/themes/colorway
+Version: 1.2.2
+Author: Automattic
+Author URI: http://theme.wordpress.com/
+License: GPL v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: blue, custom-background, custom-colors, custom-header, custom-menu, featured-images, flexible-header, full-width-template, microformats, one-column, post-formats, rtl-language-support, silver, sticky-post, theme-options, translation-ready, two-columns, white
 */
 
 /* =Reset
@@ -1329,6 +1315,19 @@ li.pingback + li.pingback {
 /* Calendar Widget */
 td#next {
 	text-align: right;
+}
+
+/* Gravatar Widget */
+.grav-widget-left,
+.grav-widget-right {
+	margin-top: 0 !important;
+	padding: 1px !important;
+}
+.grav-widget-left {
+	margin-right: 20px;
+}
+.grav-widget-right {
+	margin-right: 20px;
 }
 
 /* Milestone Widget */

@@ -22,10 +22,10 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-summary">
-		<?php if ( ! post_password_required() ) {
+		<?php if ( ! post_password_required() ) :
 			$pattern = get_shortcode_regex();
 			preg_match( "/$pattern/s", get_the_content(), $match );
-			$atts = shortcode_parse_atts( $match[3] );
+			$atts   = isset( $match[3] ) ? shortcode_parse_atts( $match[3] ) : array();
 			$images = isset( $atts['ids'] ) ? explode( ',', $atts['ids'] ) : false;
 
 			if ( ! $images ) :
@@ -45,26 +45,26 @@
 				$total_images = count( $images );
 				$image = array_shift( $images );
 				$image_img_tag = wp_get_attachment_image( $image, forever_get_post_thumbnail_size() );
-			endif;
-		?>
-			<figure class="entry-thumb">
-				<?php if ( '' != get_the_post_thumbnail() ) : ?>
-					<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( forever_get_post_thumbnail_size() ); ?></a>
-				<?php elseif ( ! empty( $image_img_tag ) ) : ?>
-					<a href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
-				<?php endif; ?>
-			</figure><!-- .gallery-thumb -->
+			?>
+				<figure class="entry-thumb">
+					<?php if ( '' != get_the_post_thumbnail() ) : ?>
+						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( forever_get_post_thumbnail_size() ); ?></a>
+					<?php elseif ( ! empty( $image_img_tag ) ) : ?>
+						<a href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
+					<?php endif; ?>
+				</figure><!-- .gallery-thumb -->
 
-			<?php if ( 0 < $total_images ) : ?>
-				<p><em><?php
-					printf( _n( 'This gallery contains <a %1$s>%2$s photo</a>.', 'This gallery contains <a %1$s>%2$s photos</a>.', $total_images, 'forever' ),
-						'href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( sprintf( __( 'Permalink to %s', 'forever' ), the_title_attribute( 'echo=0' ) ) ) . '" rel="bookmark"',
-						number_format_i18n( $total_images )
-					);
-				?></em></p>
+				<?php if ( 0 < $total_images ) : ?>
+					<p><em><?php
+						printf( _n( 'This gallery contains <a %1$s>%2$s photo</a>.', 'This gallery contains <a %1$s>%2$s photos</a>.', $total_images, 'forever' ),
+							'href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( sprintf( __( 'Permalink to %s', 'forever' ), the_title_attribute( 'echo=0' ) ) ) . '" rel="bookmark"',
+							number_format_i18n( $total_images )
+						);
+					?></em></p>
+				<?php endif; ?>
 			<?php endif; ?>
 
-		<?php } // if ( ! post_password_required() ) ?>
+		<?php endif; // if ( ! post_password_required() ) ?>
 
 		<?php the_excerpt(); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'forever' ), 'after' => '</div>' ) ); ?>

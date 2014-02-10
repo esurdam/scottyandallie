@@ -90,7 +90,8 @@ body {
 	padding: 0 1.615em;
 }
 #page {
-	margin: 1.615em auto;
+	border-top: 4px solid #333;
+	margin: 0 auto;
 	width: 960px;
 }
 #masthead,
@@ -212,12 +213,11 @@ textarea {
 	line-height: 1.615;
 }
 body {
+	font-family: 'Raleway', sans-serif;
 	background-color: #fff;
 }
 #page {
 	background: #fff;
-	border: 1px solid #bbb;
-	border-radius: 10px;
 }
 
 /* Headings */
@@ -1020,7 +1020,6 @@ footer.entry-meta a {
 .comment-content img,
 .widget img {
 	background: #fff;
-	border: 1px solid #bbb;
 	max-width: 99.35%; /* Fluid images for posts, comments, and widgets */
 	padding: 1px;
 }
@@ -1307,7 +1306,6 @@ li.pingback + li.pingback {
 }
 #secondary .widget > ul > li,
 #secondary .widget > div > ul > li {
-	border-bottom: 1px solid #eee;
 	margin-left: -7.042253521127%;
 	padding: .65em 0 .4em 7.042253521127%;
 }
@@ -1443,7 +1441,7 @@ td#next {
 	margin-left: 1em;
 }
 #colophon {
-	background: #000;
+	background: #3b3b3b;
 	border-radius: 0 0 10px 10px;
 	color: #ccc;
 	margin: 0 -1px -1px;

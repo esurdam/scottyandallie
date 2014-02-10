@@ -1,4 +1,4 @@
-<?php	 		 		
+<?php
 /**
  * The base configurations of the WordPress.
  *
@@ -14,8 +14,8 @@
  * @package WordPress
  */
 
-define('WP_CACHE', true); 
-define('WP_POST_REVISIONS', false); 
+//define('WP_CACHE', true);
+define('WP_POST_REVISIONS', false);
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -83,7 +83,7 @@ define ('WPLANG', '');
  */
 define('WP_DEBUG', false);
 
-define( 'WP_CONTENT_URL', 'http://scottyandallie.com/wp-content' );
+define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content' );
 define( 'WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content' );
 
 

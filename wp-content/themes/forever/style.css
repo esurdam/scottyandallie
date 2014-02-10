@@ -99,7 +99,7 @@ body {
 #featured-content,
 #recent-content,
 #latest-message {
-	margin: 0 3.645833333333%;
+	margin: 0;
 }
 #recent-content {
 	overflow: hidden;
@@ -791,7 +791,6 @@ a:hover {
 	text-transform: uppercase;
 }
 #main {
-	border-bottom: 18px solid #eee;
 	float: left;
 	padding-top: 1.615em;
 }

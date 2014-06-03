@@ -1,0 +1,25 @@
+/*
+Theme Name: Scotty and Allie
+Description: Child Theme of Forever
+Version: 0.1
+Author: Scott Taylor
+Template: forever
+*/
+
+.clear {
+	clear: both;
+}
+
+.wedding-party-column {
+	float: left;
+	width: 48%;
+}
+
+.wedding-party-column:nth-of-type(even) {
+	float: right;
+}
+
+.post-type-archive-wedding_party .entry-title {
+	font-size: 21px;
+	font-size: 2.1rem;
+}

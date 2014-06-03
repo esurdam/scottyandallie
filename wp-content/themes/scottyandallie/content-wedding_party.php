@@ -11,9 +11,7 @@
 			<figure class="entry-thumb">
 				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( forever_get_post_thumbnail_size() ); ?></a>
 			</figure><!-- .gallery-thumb -->
-			<?php the_excerpt(); ?>
-		<?php } else { ?>
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'forever' ) ); ?>
-		<?php } // if ( '' != get_the_post_thumbnail() ) ?>
+		<?php } ?>
+		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'forever' ) ); ?>
 	</div><!-- .entry-content -->
 </article><!-- #post-<?php the_ID(); ?> -->

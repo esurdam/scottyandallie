@@ -24,10 +24,18 @@ Template: forever
 	font-size: 2.1rem;
 }
 
+.post-type-archive-wedding_party .hentry {
+	margin: 0 0 1em;
+}
+
 #page {
 	width: 1020px;
 }
 
 #content {
 	max-width: 620px;
+}
+
+.entry-thumb {
+	margin: 0 1.615em 0 0;
 }

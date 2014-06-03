@@ -12,7 +12,7 @@ Template: forever
 
 .wedding-party-column {
 	float: left;
-	width: 48%;
+	width: 47%;
 }
 
 .wedding-party-column:nth-of-type(even) {

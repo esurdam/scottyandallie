@@ -8,4 +8,4 @@ function _force_redirect_to_login() {
 
     return true;
 }
-add_filter( 'do_parse_request', '_force_redirect_to_login' );
+//add_filter( 'do_parse_request', '_force_redirect_to_login' );

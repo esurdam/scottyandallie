@@ -111,24 +111,19 @@ function forever_setup() {
 	 */
 	add_theme_support( 'post-formats', array( 'gallery', 'image', 'status', 'quote' ) );
 
+	function forever_fonts() {
+		$protocol = is_ssl() ? 'https' : 'http';
+		wp_enqueue_style( 'raleway', "$protocol://fonts.googleapis.com/css?family=Raleway:500,600,300,700,800" );
+	}
+
 	/**
 	 * Enqueue styles.
 	 */
 	function forever_styles() {
 		wp_enqueue_style( 'countdown', get_template_directory_uri() . '/css/jquery.countdown.css' );
-		wp_enqueue_style( 'forever-style', get_template_directory_uri() . '/style.css' );
 		wp_enqueue_style( 'scotty-and-allie-style', get_stylesheet_uri() );
 	}
 	add_action( 'wp_enqueue_scripts', 'forever_styles' );
-
-	/**
-	 * Enqueue Fonts.
-	 */
-	function forever_fonts() {
-		$protocol = is_ssl() ? 'https' : 'http';
-		wp_enqueue_style( 'raleway', "$protocol://fonts.googleapis.com/css?family=Raleway:500,600,300,700,800" );
-	}
-	add_action( 'wp_enqueue_scripts', 'forever_fonts' );
 
 	/**
 	 * Enqueue scripts

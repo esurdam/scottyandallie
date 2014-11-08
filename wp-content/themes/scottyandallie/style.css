@@ -6,6 +6,208 @@ Author: Scott Taylor
 Template: forever
 */
 
+@import "forever.css";
+
+body {
+	font-family: 'mathleteskinny', Times New Roman, Times, serif;
+	color: #0c3d4d;
+	background: url(/wp-content/themes/scottyandallie/images/bg.jpg) top center;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding: 0;
+}
+
+#gradientbg {
+	background: url(/wp-content/themes/scottyandallie/images/gradient-bg.jpg) top center repeat-x fixed;
+}
+
+#mainbg {
+	background: url(/wp-content/themes/scottyandallie/images/mainbg.jpg) top center repeat-x fixed;
+}
+
+#page {
+	background: transparent;
+}
+
+#site-title {
+	font-family: 'mathletebulky', Times New Roman, Times, serif;
+}
+
+#site-title a {
+	color: #fff;
+	text-shadow: 3px 3px #000;
+}
+
+#access {
+	border: 1px solid #fff;
+	border-width: 1px 0;
+}
+
+#access li {
+	font-size: 32px;
+	font-size: 3.2rem;
+	letter-spacing: 1px;
+}
+
+#access a, .entry-title a {
+	font-family: 'mathletebulky', Times New Roman, Times, serif;
+	color: #fff;
+}
+
+#access li.current_page_item a, #access li.current-menu-item a {
+	background: rgba(255, 255, 255, 0.9);
+	color: #000;
+}
+
+#site-description {
+	color: #fff;
+	font-size: 48px;
+	font-size: 4.8rem;
+	font-family: 'mathletebulky', Times New Roman, Times, serif;
+	border-bottom: 1px solid #fff;
+}
+
+.is-countdown {
+	background: #fff;
+	background: rgba(255, 255, 255, 0.1);
+	color: #fff;
+	text-shadow: 1px 1px #000;
+	letter-spacing: 1px;
+	border: 0;
+	font-size: 32px;
+	font-size: 3.2rem;
+	line-height: 1;
+}
+
+#content {
+	color: #fff;
+	font-size: 32px;
+	font-size: 3.2rem;
+	line-height: 1.35;
+}
+
+h1 {
+	font-size: 55px;
+	font-size: 5.5rem;
+}
+
+.entry-content, .entry-summary {
+	margin: 1em 0 0;
+}
+
+.entry-header .entry-meta {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer.entry-meta {
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#secondary {
+	border-left: 1px solid rgba(255, 255, 255, 0.1);
+	margin-right: 0;
+	width: 33%;
+}
+
+#secondary .widget-title {
+	font-family: 'mathletebulky', Times New Roman, Times, serif;
+	color: #fff;
+	font-size: 32px;
+	font-size: 3.2rem;
+	margin-left: 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comments-link {
+	display: none;
+}
+
+.home #masthead {
+	padding: 0;
+}
+
+.home #access {
+	margin: 0 auto;
+}
+
+.home #site-title {
+	font-size: 96px;
+	font-size: 9.6rem;
+	line-height: 1.2;
+}
+
+.home #site-description {
+	padding-bottom: 0.5em;
+}
+
+#home-gallery {
+	width: 1022px;
+	display: block;
+	height: 680px;
+	border: 1px solid rgba(12, 61, 77, 0.3);
+}
+
+#home-gallery div {
+	border: 1px solid rgba(12, 61, 77, 0.45);
+	width: 1022px;
+	display: block;
+	height: 680px;
+	box-shadow: 20px 20px 35px 35px rgba(12, 61, 77, 0.45) inset, -20px -20px 35px 35px rgba(12, 61, 77, 0.45) inset;
+	position: absolute;
+	z-index: 2;
+}
+
+#home-gallery img {
+	position: relative;
+	display: block;
+	z-index: 1;
+}
+
+#colophon {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 0 0 10px 10px;
+	color: #fff;
+	text-shadow: 1px 1px #000;
+	letter-spacing: 1px;
+	font-size: 32px;
+	font-size: 3.2rem;
+	margin: 0 -1px -1px;
+}
+#colophon a {
+	color: #fff;
+}
+
+#site-info {
+	padding: 0.5em;
+}
+
+.hentry {
+	margin: 0 0 2.5em;
+}
+
+ul#pretty-pinterest-pins-widget li.pretty-pinterest-pin {
+	padding: 0 !important;
+	margin-bottom: 20px !important;
+}
+
+ul#pretty-pinterest-pins-widget li.pretty-pinterest-pin div.pretty-pinterest-image {
+	width: 100% !important;
+	margin: 0 !important;
+}
+
+ul#pretty-pinterest-pins-widget li.pretty-pinterest-pin span {
+	padding: 5px 10px !important;
+}
+
+ul#pretty-pinterest-pins-widget li.pretty-pinterest-pin span p {
+	font-size: 24px;
+	font-size: 2.4rem;
+	line-height: 1.2 !important;
+	word-wrap: break-word;
+	color: #333;
+	letter-spacing: 1px;
+}
+
 .clear {
 	clear: both;
 }
@@ -17,11 +219,6 @@ Template: forever
 
 .wedding-party-column:nth-of-type(even) {
 	float: right;
-}
-
-.post-type-archive-wedding_party .entry-title {
-	font-size: 21px;
-	font-size: 2.1rem;
 }
 
 .post-type-archive-wedding_party .hentry {
@@ -36,6 +233,10 @@ Template: forever
 	max-width: 620px;
 }
 
+.post-type-archive-wedding_party #content {
+	margin-left: 0;
+}
+
 .entry-thumb {
-	margin: 0 1.615em 0 0;
+	margin: 0 1em 0 0;
 }

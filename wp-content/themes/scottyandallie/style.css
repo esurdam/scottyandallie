@@ -141,23 +141,28 @@ footer.entry-meta {
 }
 
 #home-gallery {
-	width: 1022px;
+	max-width: 100%;
+	width: 1024px;
 	display: block;
 	height: 680px;
+	background: rgb(12, 61, 77);
 	border: 1px solid rgba(12, 61, 77, 0.3);
 }
 
 #home-gallery div {
-	border: 1px solid rgba(12, 61, 77, 0.45);
-	width: 1022px;
+	max-width: 100%;
+	width: 1024px;
 	display: block;
 	height: 680px;
-	box-shadow: 20px 20px 35px 35px rgba(12, 61, 77, 0.45) inset, -20px -20px 35px 35px rgba(12, 61, 77, 0.45) inset;
+	box-shadow: 20px 20px 35px 35px rgba(12, 61, 77, 0.35) inset,
+		-20px -20px 35px 35px rgba(12, 61, 77, 0.35) inset;
 	position: absolute;
 	z-index: 2;
 }
 
 #home-gallery img {
+	max-width: 100%;
+	height: auto;
 	position: relative;
 	display: block;
 	z-index: 1;

@@ -13,8 +13,9 @@
 				current += 1;
 			}
 
-			img.hide().attr( 'src', photos[ current ] ).fadeIn();
-			gallery();
+			img.animate({opacity: 0.3}, 300, function () {
+				img.attr( 'src', photos[ current ] ).animate({opacity: 1}, 600, gallery);
+			});
 		}, 5000);
 	}
 

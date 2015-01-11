@@ -13,7 +13,7 @@
 				current += 1;
 			}
 
-			img.animate({opacity: 0.3}, 300, function () {
+			img.animate({opacity: 0.9}, 600, function () {
 				img.attr( 'src', photos[ current ] ).animate({opacity: 1}, 600, gallery);
 			});
 		}, 5000);

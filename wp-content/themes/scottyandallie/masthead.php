@@ -11,6 +11,9 @@ echo json_encode( array(
 	'/wp-content/uploads/photos/4.jpg',
 	'/wp-content/uploads/photos/5.jpg',
 	'/wp-content/uploads/photos/6.jpg',
+	'/wp-content/uploads/photos/7.jpg',
+	'/wp-content/uploads/photos/8.jpg',
+	'/wp-content/uploads/photos/9.jpg',
 ) );
 ?></script>
 <?php endif; ?>

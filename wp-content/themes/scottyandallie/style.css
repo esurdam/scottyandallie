@@ -26,6 +26,10 @@ b, strong {
 	background: url(/wp-content/themes/scottyandallie/images/gradient-bg.jpg) top center repeat-x fixed;
 }
 
+#main {
+	padding-top: 0.8em;
+}
+
 #mainbg {
 	background: url(/wp-content/themes/scottyandallie/images/mainbg.jpg) top center repeat-x fixed;
 }

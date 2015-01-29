@@ -31,6 +31,7 @@
 <![endif]-->
 <link rel="stylesheet" href="/wp-content/fonts/mathlete_bulky_macroman/stylesheet.css"/>
 <link rel="stylesheet" href="/wp-content/fonts/mathlete_skinny_macroman/stylesheet.css"/>
+<link rel="stylesheet" href="/wp-content/fonts/pompiere/stylesheet.css"/>
 <?php wp_head(); ?>
 </head>
 

@@ -85,11 +85,24 @@ body {
 	font-size: 32px;
 	font-size: 3.2rem;
 	line-height: 1.35;
+	width: 100%;
 }
 
 h1 {
 	font-size: 55px;
 	font-size: 5.5rem;
+}
+
+p {
+	margin-bottom: 0.8em;
+}
+
+li.comment {
+	padding: 0 0 0.8em 5.5em;
+}
+
+.commentlist {
+	margin: 0.8em 0;
 }
 
 .entry-content, .entry-summary {
@@ -196,7 +209,7 @@ footer.entry-meta {
 }
 
 .hentry {
-	margin: 0 0 2.5em;
+	margin: 0 0 0.8em;
 }
 
 ul#pretty-pinterest-pins-widget li.pretty-pinterest-pin {
@@ -220,6 +233,18 @@ ul#pretty-pinterest-pins-widget li.pretty-pinterest-pin span p {
 	word-wrap: break-word;
 	color: #333;
 	letter-spacing: 1px;
+}
+
+ul#pretty-pinterest-pins-widget li.pretty-pinterest-pin div.pretty-pinterest-image img {
+	width: auto !important;
+	max-width: 100% !important;
+}
+
+ul#pretty-pinterest-pins-widget li.pretty-pinterest-pin,
+ul#pretty-pinterest-pins-widget li.pretty-pinterest-follow-me {
+	width: auto;
+	max-width: 300px;
+	margin: 0 auto 10px !important;
 }
 
 .clear {
@@ -253,4 +278,48 @@ ul#pretty-pinterest-pins-widget li.pretty-pinterest-pin span p {
 
 .entry-thumb {
 	margin: 0 1em 0 0;
+}
+
+@media only screen and (max-width : 1018px) {
+	#content {
+		max-width: 530px;
+	}
+}
+
+@media only screen and (max-width : 880px) {
+	#primary, #secondary {
+		float: none;
+		width: 92%;
+	}
+}
+
+@media only screen and (max-width : 480px) {
+	.home #site-title {
+		font-size: 56px;
+		font-size: 5.6rem;
+		line-height: 1;
+		margin-bottom: 20px;
+	}
+
+	#site-description {
+		padding: 0 0.5em 2em;
+	}
+
+	#access li {
+		width: auto;
+		margin: 5px 10px 5px 30px;
+		font-size: 30px;
+		font-size: 3rem;
+	}
+
+	#access a {
+		margin: 0;
+		padding: 1px 6px;
+		line-height: 1;
+	}
+
+	#primary, #secondary {
+		float: none;
+		width: 92%;
+	}
 }

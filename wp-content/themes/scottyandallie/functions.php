@@ -19,7 +19,7 @@ class ScottyAndAllie {
 				'sister-of-the-bride',
 				'maid-of-honor',
 				'bridesmaid',
-				'director-of-pomp-and-circumstanceman-maid',
+				'director-of-pomp-and-circumstance',
 				'master-of-cehairemony'
 			);
 

@@ -18,7 +18,8 @@ class ScottyAndAllie {
 				'bride',
 				'sister-of-the-bride',
 				'maid-of-honor',
-				'bridesmaid'
+				'bridesmaid',
+				'director-of-pomp-and-circumstanceman-maid'
 			);
 
 			$ids = array();

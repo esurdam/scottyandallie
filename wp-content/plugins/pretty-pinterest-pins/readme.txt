@@ -3,7 +3,7 @@ Contributors: jowilki
 Donate link: http://jodiwilkinson.com
 Tags: pinterest, widget, sidebar, plugin
 Requires at least: 2.8
-Tested up to: 3.6
+Tested up to: 4.1.1
 Stable tag: trunk
 
 A plugin to show off images, captions, and links from your latest Pinterest activity.
@@ -61,6 +61,9 @@ To show pins only from a specific board, you can enter the name of the board in 
 2. The settings interface is easy to use and straightforward
 
 == Changelog ==
+
+= 1.3 =
+* Pinterest feed is now fetched with https
 
 = 1.2 =
 * Added ability to show pins from specific boards and increased the maximum number of pins you can show.

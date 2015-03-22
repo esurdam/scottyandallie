@@ -11,8 +11,8 @@ server {
         try_files $uri $uri/ /index.php?$args;
     }
 
-	location = /rsvp {
-		return 301 http://goo.gl/forms/Lg253XzRe3;
+	location = /rsvp/?$ {
+		rewrite ^ http://goo.gl/forms/Lg253XzRe3 permanent;
 	}
 
     # Add trailing slash to */wp-admin requests.

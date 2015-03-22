@@ -11,6 +11,8 @@ server {
         try_files $uri $uri/ /index.php?$args;
     }
 
+	rewrite ^/rsvp/?$ http://goo.gl/forms/Lg253XzRe3 permanent;
+
     # Add trailing slash to */wp-admin requests.
     rewrite /wp-admin$ $scheme://$host$uri/ permanent;
 
@@ -25,7 +27,6 @@ server {
 
     # Rewrite multisite '.../wp-.*' and '.../*.php'.
     if (!-e $request_filename) {
-		rewrite ^/rsvp/?$ http://goo.gl/forms/Lg253XzRe3 permanent;
 		rewrite ^(/[_0-9a-zA-Z-]+)?(/wp-.*) /wordpress$2 last;
 		rewrite ^(/[_0-9a-zA-Z-]+.*)?(/wp-admin/.*\.php)$ /wordpress$2 last;
 		rewrite ^(/[_0-9a-zA-Z-]+)?(/.*\.php)$ /wordpress$2 last;

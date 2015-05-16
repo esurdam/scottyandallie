@@ -116,6 +116,10 @@ p {
 	margin-bottom: 0.8em;
 }
 
+li {
+        font-family: 'pompiere_regular';
+}
+
 p * {
 	font-family: 'pompiere_regular';
 }

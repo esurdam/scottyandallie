@@ -296,7 +296,8 @@ ul#pretty-pinterest-pins-widget li.pretty-pinterest-follow-me {
 }
 
 #content {
-	max-width: 620px;
+	max-width: 92.5%;
+	margin: 0 3.645833333333%;
 }
 
 .post-type-archive-wedding_party #content {
@@ -316,10 +317,10 @@ ul#pretty-pinterest-pins-widget li.pretty-pinterest-follow-me {
 	margin: 0 1em 0 0;
 }
 
-@media only screen and (max-width : 1018px) {
-	#content {
-		max-width: 530px;
-	}
+#primary {
+	float: none;
+	margin: 0;
+	width: 100%;
 }
 
 @media only screen and (max-width : 880px) {

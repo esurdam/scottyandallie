@@ -19,9 +19,6 @@
 	}
 
     $(document).ready(function () {
-		var weddingDay = new Date(2015, 5, 6, 12, 0, 0);
-		$('#wedding-counter').countdown({until: weddingDay});
-
 		photoData = $( '#home-gallery-data' );
 		if ( photoData.length ) {
 			img = $( '#home-gallery img' );

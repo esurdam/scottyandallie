@@ -122,7 +122,6 @@ function forever_setup() {
 	 * Enqueue styles.
 	 */
 	function forever_styles() {
-		wp_enqueue_style( 'countdown', get_template_directory_uri() . '/css/jquery.countdown.css' );
 		wp_enqueue_style( 'scotty-and-allie-style', get_stylesheet_uri() );
 	}
 	add_action( 'wp_enqueue_scripts', 'forever_styles' );
@@ -132,7 +131,6 @@ function forever_setup() {
 	 */
 	function forever_scripts() {
 		wp_enqueue_script( 'p', get_stylesheet_directory_uri() . '/js/jquery.plugin.min.js', array( 'jquery' ), '', true );
-		wp_enqueue_script( 'countdown', get_stylesheet_directory_uri() . '/js/jquery.countdown.min.js', array( 'jquery' ), '', true );
 		wp_enqueue_script( 'scott', get_stylesheet_directory_uri() . '/js/scott.js', array( 'jquery' ), '', true );
 
 		// enqueue comment reply script

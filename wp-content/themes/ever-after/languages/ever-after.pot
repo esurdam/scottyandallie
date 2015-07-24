@@ -1,14 +1,14 @@
-# Copyright (C) 2013 Automattic
-# This file is distributed under the same license as the Ever After package.
+# Copyright (C) 2015 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ever After 1.0\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/ever-after\n"
-"POT-Creation-Date: 2013-04-02 20:55:28+00:00\n"
+"Project-Id-Version: Ever After 1.1.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/ever-after\n"
+"POT-Creation-Date: 2015-02-25 04:12:26+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -24,6 +24,43 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
+#: content.php:18
+msgid "0"
+msgstr ""
+
+#: content.php:18
+msgid "1"
+msgstr ""
+
+#: content.php:18
+msgid "%"
+msgstr ""
+
+#: content.php:28 content.php:31 content.php:43
+msgid "Pages:"
+msgstr ""
+
+#: content.php:42
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: content.php:49 content.php:52
+msgid ", "
+msgstr ""
+
+#: content.php:65
+msgid "Posted in %1$s"
+msgstr ""
+
+#: content.php:73
+msgid "Tagged %1$s"
+msgstr ""
+
+#: content.php:78
+msgid "Edit"
+msgstr ""
+
 #: masthead.php:34
 msgid "Menu"
 msgstr ""
@@ -33,14 +70,17 @@ msgid "Skip to content"
 msgstr ""
 
 #. Theme Name of the plugin/theme
+#: wp-content/themes/pub/ever-after/style.css
 msgid "Ever After"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://theme.wordpress.com/themes/ever-after/"
+#: wp-content/themes/pub/ever-after/style.css
+msgid "https://wordpress.com/themes/ever-after/"
 msgstr ""
 
 #. Description of the plugin/theme
+#: wp-content/themes/pub/ever-after/style.css
 msgid ""
 "A wedding blog-centric theme decorated with subtle but gorgeous textures and "
 "ornaments. The wide one-column layout is great for photos and videos of your "
@@ -49,9 +89,11 @@ msgid ""
 msgstr ""
 
 #. Author of the plugin/theme
+#: wp-content/themes/pub/ever-after/style.css
 msgid "Automattic"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://automattic.com/"
+#: wp-content/themes/pub/ever-after/style.css
+msgid "https://wordpress.com/themes/"
 msgstr ""

@@ -13,19 +13,6 @@ if ( ! isset( $content_width ) )
 	$content_width = 870; /* pixels */
 
 /**
- * Define theme colors
- */
-if ( ! isset( $themecolors ) ) {
-	$themecolors = array(
-		'bg'     => 'ffffff',
-		'text'   => '4a4a4a',
-		'link'   => 'e693a2',
-		'border' => 'e6e6e6',
-		'url'    => 'e693a2',
-	);
-}
-
-/**
  * Disable Forever's theme options.
  *
  * @since Ever After 1.0
@@ -337,3 +324,9 @@ function everafter_remove_sidebar_widgets() {
 	unregister_sidebar( 'sidebar-1' );
 }
 add_action( 'widgets_init', 'everafter_remove_sidebar_widgets', 11 );
+
+/**
+ * Load Jetpack compatibility file.
+ */
+if ( file_exists( get_stylesheet_directory() . '/inc/jetpack.php' ) )
+	require get_stylesheet_directory() . '/inc/jetpack.php';

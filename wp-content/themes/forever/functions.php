@@ -55,7 +55,6 @@ function forever_setup() {
 	 * Enqueue styles.
 	 */
 	function forever_styles() {
-		wp_enqueue_style( 'countdown', get_template_directory_uri() . '/css/jquery.countdown.css' );
 		wp_enqueue_style( 'forever-style', get_stylesheet_uri() );
 	}
 	add_action( 'wp_enqueue_scripts', 'forever_styles' );
@@ -65,7 +64,7 @@ function forever_setup() {
 	 */
 	function forever_fonts() {
 		$protocol = is_ssl() ? 'https' : 'http';
-		wp_enqueue_style( 'raleway', "$protocol://fonts.googleapis.com/css?family=Raleway:500,600,300,700,800" );
+		wp_enqueue_style( 'raleway', "$protocol://fonts.googleapis.com/css?family=Raleway:100" );
 	}
 	add_action( 'wp_enqueue_scripts', 'forever_fonts' );
 
@@ -73,10 +72,6 @@ function forever_setup() {
 	 * Enqueue scripts
 	 */
 	function forever_scripts() {
-		wp_enqueue_script( 'p', get_template_directory_uri() . '/js/jquery.plugin.min.js', array( 'jquery' ), '', true );
-		wp_enqueue_script( 'countdown', get_template_directory_uri() . '/js/jquery.countdown.min.js', array( 'jquery' ), '', true );
-		wp_enqueue_script( 'scott', get_template_directory_uri() . '/js/scott.js', array( 'jquery' ), '', true );
-
 		// enqueue comment reply script
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -187,10 +182,10 @@ function forever_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'forever_excerpt_length' );
 
 /**
- * Returns a "Continue Reading" link for excerpts
+ * Returns a "Continue reading" link for excerpts
  */
 function forever_continue_reading_link() {
-	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' . __( 'Continue&nbsp;reading&nbsp;<span class="meta-nav">&rarr;</span>', 'forever' ) . '</a>';
+	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'forever' ) . '</a>';
 }
 
 /**
@@ -286,7 +281,7 @@ function forever_content_nav( $nav_id ) {
 	global $wp_query;
 
 	?>
-	<nav id="<?php echo $nav_id; ?>">
+	<nav id="<?php echo esc_attr( $nav_id ); ?>">
 		<h1 class="assistive-text section-heading"><?php _e( 'Post navigation', 'forever' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
@@ -326,7 +321,7 @@ function forever_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'forever' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '[Edit]', 'forever' ), ' ' ); ?></p>
+		<p><?php _e( 'Pingback:', 'forever' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'forever' ), ' ' ); ?></p>
 	<?php
 			break;
 		default :
@@ -355,7 +350,7 @@ function forever_comment( $comment, $args, $depth ) {
 						/* translators: 1: date, 2: time */
 						printf( __( '%1$s at %2$s', 'forever' ), get_comment_date(), get_comment_time() ); ?>
 					</time></a>
-					<?php edit_comment_link( __( '[Edit]', 'forever' ), ' ' );
+					<?php edit_comment_link( __( 'Edit', 'forever' ), ' ' );
 					?>
 				</div><!-- .comment-meta .commentmetadata -->
 			</footer>
@@ -632,6 +627,22 @@ function forever_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'forever_wp_title', 10, 2 );
 
-/**
- * This theme was built with PHP, Semantic HTML, CSS, and love.
+/*
+ * Remove widont filter if Posts in Columns options is active
+ *
+ * @since Forever 1.2.2
  */
+function forever_wido() {
+	if ( ! function_exists( 'forever_get_theme_options' ) ) {
+		return false;
+	}
+
+	$options = forever_get_theme_options();
+
+	if ( 'on' != $options['posts_in_columns'] ) {
+		return false;
+	}
+
+	remove_filter( 'the_title', 'widont' );
+}
+add_action( 'init', 'forever_wido' );

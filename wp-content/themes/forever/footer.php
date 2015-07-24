@@ -37,7 +37,7 @@
 					<div class="message-content">
 						<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'forever' ) ); ?>
 					</div>
-					<p class="permalink"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'forever' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></p>
+					<p class="permalink"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></p>
 				</div><!-- #latest-message -->
 			<?php endwhile;
 		} ?>

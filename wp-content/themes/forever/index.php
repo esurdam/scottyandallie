@@ -75,7 +75,7 @@ get_header(); ?>
 
 								<div class="feature-content">
 									<h1 class="feature-title">
-										<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'forever' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+										<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 									</h1>
 								</div><!-- .feature-content -->
 							</div>
@@ -132,7 +132,7 @@ get_header(); ?>
 									$class = '';
 					    	?>
 							<li>
-								<a href="#featured-post-<?php echo $post_counter; ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'forever' ), the_title_attribute( 'echo=0' ) ) ); ?>" <?php echo $class; ?>>
+								<a href="#featured-post-<?php echo $post_counter; ?>" <?php echo $class; ?>>
 									<?php the_title(); ?>
 								</a>
 							</li>

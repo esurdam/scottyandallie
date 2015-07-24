@@ -32,7 +32,7 @@
 	endif; // '' != get_the_post_thumbnail()
 	?>
 	<header class="entry-header">
-		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'forever' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
@@ -47,7 +47,19 @@
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'forever' ), 'after' => '</div>' ) ); ?>
+
+		<div class="entry-likes">
+			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'forever' ), 'after' => '</div>' ) ); ?>
+					<?php if ( function_exists( 'sharing_display' ) ) {
+			    sharing_display( '', true );
+			}
+
+			if ( class_exists( 'Jetpack_Likes' ) ) {
+			    $custom_likes = new Jetpack_Likes;
+			    echo $custom_likes->post_likes( '' );
+			} ?>
+		</div><!-- .entry-likes -->
+
 	</div><!-- .entry-summary -->
 
 	<?php

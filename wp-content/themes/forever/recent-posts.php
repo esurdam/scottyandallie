@@ -43,9 +43,8 @@ $latest_content = new WP_Query( array(
 
 			<header class="recent-header">
 				<h1 class="recent-title"><?php
-					printf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
+					printf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 						esc_url( get_permalink() ),
-						esc_attr( sprintf( __( 'Permalink to %s', 'forever' ), the_title_attribute( 'echo=0' ) ) ),
 						get_the_title()
 					 );
 				?></h1>

@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.1.1 Jun 19 2015 =
+* Minor bug fixes
+
 = 1.1 May 30 2013 =
 * Added bottom margin to audio player for the audio post format in 3.6.
 * Updated license.

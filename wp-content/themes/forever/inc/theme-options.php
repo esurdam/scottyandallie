@@ -123,7 +123,6 @@ function forever_settings_field_posts_in_columns() {
 function forever_theme_options_render_page() {
 	?>
 	<div class="wrap">
-		<?php screen_icon(); ?>
 		<h2><?php printf( __( '%s Theme Options', 'forever' ), wp_get_theme() ); ?></h2>
 		<?php settings_errors(); ?>
 

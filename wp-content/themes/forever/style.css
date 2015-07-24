@@ -1,13 +1,27 @@
 /*
 Theme Name: Forever
-Theme URI: http://theme.wordpress.com/themes/forever/
+Theme URI: https://wordpress.com/themes/forever/
 Description: The Forever theme makes it easy to wrap your wedding up in a neat little package with WordPress. You can show off every one of your best photos and highlight each important detail leading up to the big day and beyond.
-Version: 1.2.2
+Version: 1.2.4
 Author: Automattic
-Author URI: http://theme.wordpress.com/
-License: GPL v2 or later
+Author URI: https://wordpress.com/themes/
+License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: blue, custom-background, custom-colors, custom-header, custom-menu, featured-images, flexible-header, full-width-template, microformats, one-column, post-formats, rtl-language-support, silver, sticky-post, theme-options, translation-ready, two-columns, white
+Tags: light, white, silver, blue, two-columns, one-column, fixed-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, full-width-template
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+
+Throughout this document we'll be using percentages to define a fluid width wherever possible
+along with em and rem units for typography and vertical measurements
+(falling back to pixel measurements for browsers that don't support rem http://snook.ca/archives/html_and_css/font-size-with-rem)
+
+Visual elements, design, and inspiration for this theme have been taken from the Colorway theme http://wordpress.org/themes/colorway
 */
 
 /* =Reset
@@ -90,8 +104,7 @@ body {
 	padding: 0 1.615em;
 }
 #page {
-	border-top: 4px solid #333;
-	margin: 0 auto;
+	margin: 1.615em auto;
 	width: 960px;
 }
 #masthead,
@@ -99,7 +112,7 @@ body {
 #featured-content,
 #recent-content,
 #latest-message {
-	margin: 0;
+	margin: 0 3.645833333333%;
 }
 #recent-content {
 	overflow: hidden;
@@ -213,11 +226,12 @@ textarea {
 	line-height: 1.615;
 }
 body {
-	font-family: 'Raleway', sans-serif;
 	background-color: #fff;
 }
 #page {
 	background: #fff;
+	border: 1px solid #bbb;
+	border-radius: 10px;
 }
 
 /* Headings */
@@ -791,6 +805,7 @@ a:hover {
 	text-transform: uppercase;
 }
 #main {
+	border-bottom: 18px solid #eee;
 	float: left;
 	padding-top: 1.615em;
 }
@@ -1019,8 +1034,12 @@ footer.entry-meta a {
 .comment-content img,
 .widget img {
 	background: #fff;
+	border: 1px solid #bbb;
 	max-width: 99.35%; /* Fluid images for posts, comments, and widgets */
 	padding: 1px;
+}
+.widget img {
+	max-width: 98.4%;
 }
 .entry-content img,
 .comment-content img {
@@ -1305,6 +1324,7 @@ li.pingback + li.pingback {
 }
 #secondary .widget > ul > li,
 #secondary .widget > div > ul > li {
+	border-bottom: 1px solid #eee;
 	margin-left: -7.042253521127%;
 	padding: .65em 0 .4em 7.042253521127%;
 }
@@ -1440,7 +1460,7 @@ td#next {
 	margin-left: 1em;
 }
 #colophon {
-	background: #3b3b3b;
+	background: #000;
 	border-radius: 0 0 10px 10px;
 	color: #ccc;
 	margin: 0 -1px -1px;
@@ -1458,4 +1478,13 @@ img#wpstats {
 	display: block;
 	margin: 0 auto 1.615em;
 	padding: 3px;
+}
+
+/* =WordPress.com Styling
+----------------------------------------------- */
+
+.entry-likes:after {
+	display: block;
+	content: "";
+	margin: 36px 0;
 }

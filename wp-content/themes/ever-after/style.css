@@ -1,14 +1,14 @@
 /*
 Theme Name: Ever After
-Theme URI: http://theme.wordpress.com/themes/ever-after/
+Theme URI: https://wordpress.com/themes/ever-after/
 Description: A wedding blog-centric theme decorated with subtle but gorgeous textures and ornaments. The wide one-column layout is great for photos and videos of your wedding or your wedding plan that you want to share with family, friends, or the world.
+Version: 1.1.1
 Author: Automattic
-Author URI: http://automattic.com/
+Author URI: https://wordpress.com/themes/
 Template: forever
-Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: blue, pink, white, light, one-column, fixed-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, post-formats, rtl-language-support, sticky-post, translation-ready
+Tags: blue, pink, white, light, one-column, fixed-layout, custom-background, custom-header, custom-menu, featured-images, flexible-header, post-formats, rtl-language-support, sticky-post, translation-ready, responsive-layout
 */
 
 @import url("../forever/style.css");
@@ -236,6 +236,9 @@ input[type="submit"] {
 	font-size: 1.5rem;
 	padding: 4px 21px 6px;
 	text-transform: uppercase;
+}
+input[type="file"] {
+	width: 100%;
 }
 input[type="text"],
 input[type="email"],
@@ -474,7 +477,8 @@ a:hover {
 #page .main-navigation li li:hover > a:hover {
 	color: #4c4c4b;
 }
-.main-navigation ul li:hover > ul {
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
 	display: block;
 }
 
@@ -1283,36 +1287,6 @@ li.comment .logged-in-as {
 }
 
 
-/* =WP.com
------------------------------------------------ */
-
-#main div.sharedaddy div.sd-block {
-	border-color: #e6e6e6;
-}
-#main div.sharedaddy h3.sd-title {
-	color: #8a8a8a;
-	font-family: 'Oswald', sans-serif;
-	font-size: 13px;
-	font-size: 1.3rem;
-	font-style: normal;
-	font-weight: 400;
-	letter-spacing: 0;
-	text-transform: uppercase;
-}
-.entry-content > div.sharedaddy,
-.message-content > div.sharedaddy {
-	margin-bottom: 2.5em;
-}
-.entry-content .contact-form label,
-.entry-content .contact-form label.checkbox,
-.entry-content .contact-form label.radio {
-	font-weight: 400;
-}
-img#wpstats {
-	background: transparent;
-}
-
-
 /* =Responsive Layout
 ----------------------------------------------- */
 
@@ -1500,4 +1474,62 @@ img#wpstats {
 #ie8 .comment-content img,
 #ie8 .widget img {
 	width: auto;
+}
+
+
+/* =Infinity Styles
+-------------------------------------------------------------- */
+
+/* Global IS resets and general styling */
+.infinite-scroll .infinite-wrap {
+	border-top: none;
+	padding: 0;
+}
+/* Hide elements that should not be shown on the index when IS is enabled. */
+.infinite-scroll #nav-below,
+.infinite-scroll.neverending #colophon {
+	display: none;
+}
+.infinite-scroll #latest-message {
+	padding: 1.5em 0;
+}
+.infinity-end.neverending #colophon {
+	display: block;
+}
+.infinity-end.neverending #latest-message {
+	padding: 1.5em 0 0;
+}
+.infinite-loader {
+	display: block;
+	margin: 10px auto 32px;
+	width: 35px;
+}
+#infinite-handle {
+	margin: 30px 0;
+	text-align: center;
+}
+#infinite-handle span {
+	background: #59dfe6;
+	border: none;
+	border-radius: 3px;
+	color: #fff;
+	font-family: 'Oswald', sans-serif;
+	font-size: 13px;
+	padding: 0.65em 1.5em 0.7em;
+	text-transform: uppercase;
+}
+#infinite-handle span:before {
+	color: #fff;
+}
+#infinite-handle span:hover {
+	background: #e693a2;
+	color: #fff;
+	-webkit-transition: all 0.18s ease-out;
+	-moz-transition: all 0.18s ease-out;
+	-ms-transition: all 0.18s ease-out;
+	-o-transition: all 0.18s ease-out;
+	transition: all 0.18s ease-out;
+}
+#infinite-footer {
+	z-index: 9999;
 }

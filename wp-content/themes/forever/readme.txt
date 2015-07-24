@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 1.2.3 June 20 2015=
+* Escaped all necessary inputs, URLs, etc.
+
+= 1.2.2 Feb 24, 2014 =
+* Remove widont filter if Posts in Columns option is active.
+
 = 1.2.1 June 25, 2013 =
 * Removed deprecated functions and backward compatibility for versions prior to 3.4.
 
